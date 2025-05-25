@@ -5,9 +5,9 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources",
-        tags="@Search2 or @Search1",
+        tags="@Login1 or @Login2",
         glue = {"StepDefinitions"},
         plugin={"pretty","html:TestReports\\TestReports.html"}
 )
-public class Runner extends AbstractTestNGCucumberTests {
+public class Runner1 extends AbstractTestNGCucumberTests {
 }

@@ -8,6 +8,7 @@ Feature: Search Products
 #  7. Verify 'SEARCHED PRODUCTS' is visible
 #  8. Verify all the products related to search are visible
 
+  @Search1
   Scenario: Validate search a product
     Given the user is in login page
     When the user enters valid credentials
@@ -29,6 +30,7 @@ Feature: Search Products
 #  7. Click 'X' button corresponding to particular product
 #  8. Verify that product is removed from the cart
 
+  @Search2
   Scenario: Validate add and remove products
     Given the user is in login page
     When the user enters valid credentials

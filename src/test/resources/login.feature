@@ -1,4 +1,6 @@
 Feature: Web Login
+
+  @Login1
   Scenario: Validate invalid credentials
     Given Navigate to url
     When Verify that home page is visible successfully
@@ -6,7 +8,7 @@ Feature: Web Login
     Then Click 'login' button
     And Verify error 'Your email or password is incorrect!' is visible
 
-
+  @Login2
   Scenario: Validate credentials
     Given the user is in login page
     When the user enters valid credentials
