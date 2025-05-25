@@ -12,6 +12,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <suiteFile>testng.xml</suiteFile>
     </properties>
     <dependencies>
         <dependency>
@@ -41,7 +42,8 @@
                 <version>3.5.3</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+<!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
+                        <suiteXmlFile>${suiteFile}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
