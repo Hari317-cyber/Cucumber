@@ -42,7 +42,6 @@
                 <version>3.5.3</version>
                 <configuration>
                     <suiteXmlFiles>
-<!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
                         <suiteXmlFile>${suiteFile}</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
