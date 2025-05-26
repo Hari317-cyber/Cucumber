@@ -5,12 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 
 public class SearchProductsPOM {
 
     protected WebDriver driver;
-    SoftAssert softAs = new SoftAssert();
+
 
     ////a[contains(@href,'prod')]
     @FindBy(xpath = "//a[contains(@href,'prod')]")
@@ -63,11 +65,13 @@ public class SearchProductsPOM {
         this.productsTab.click();
     }
 
-    public void getHeaderInfo(String header){
+    public boolean getHeaderInfo(String header){
         System.out.println(header);
         System.out.println(searchProductHeader.getText());
-            this.softAs.assertEquals(searchProductHeader.getText(),header,"Header not visible");
-            this.softAs.assertAll();
+
+        return searchProductHeader.getText().equals("Header not visible");
+            //this.softAs.assertEquals(searchProductHeader.getText(),header,"Header not visible1");
+            //this.softAs.assertAll();
             //this.softAs.notifyAll();
     }
 
@@ -76,8 +80,9 @@ public class SearchProductsPOM {
         this.searchProduct.click();
     }
 
-    public void filterResult(String item){
-        this.softAs.assertEquals(filterItem.getText(),item,"Item not filtered");
+    public String filterResult(String item){
+        //this.softAs.assertEquals(filterItem.getText(),item,"Item not filtered");
+        return filterItem.getText();
     }
 
     public void viewDetails() throws InterruptedException {
@@ -107,15 +112,17 @@ public class SearchProductsPOM {
         Thread.sleep(200);
     }
 
-    public void verifyShopping() throws InterruptedException {
+    public String verifyShopping() throws InterruptedException {
         Thread.sleep(300);
-        this.softAs.assertEquals(verifyshopping.getText(), "Shopping Cart");
-        this.softAs.assertAll();
+        //this.softAs.assertEquals(verifyshopping.getText(), "Shopping Cart");
+        return verifyshopping.getText();
+
     }
     public void quantityDelete() throws InterruptedException {
         Thread.sleep(300);
         this.delete.click();
 
 }
+
 
 }

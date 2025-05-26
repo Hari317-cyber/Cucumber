@@ -114,7 +114,15 @@ public class loginPOM {
 
 
         public void logout(){
-            logout.click();
+
+            try {
+//              if (!driver.findElement(By.xpath("//h2")).getText().contains("Login to your account")) {
+                if (login.getText().contains("Ajith")) {
+                    logout.click();
+                }
+            } catch (Exception e) {
+
+            }
         }
 
 }

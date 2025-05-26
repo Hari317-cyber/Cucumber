@@ -3,9 +3,11 @@ package StepDefinitions;
 import CommonDriver.DefaultDriver;
 import PageObjectModel.SearchProductsPOM;
 import io.cucumber.java.en.Then;
+import org.testng.asserts.SoftAssert;
 
 public class searchProducts {
 
+    SoftAssert softAs = new SoftAssert();
     SearchProductsPOM searchProducts = new SearchProductsPOM(DefaultDriver.getDriver("chrome"));
 
     @Then("Click on {string} button")
@@ -19,7 +21,9 @@ public class searchProducts {
     public void verify_user_is_navigated_to_page_successfully(String header) {
         System.out.println("verify_user_is_navigated_to_page_successfully");
         // Write code here that turns the phrase above into concrete actions
-        searchProducts.getHeaderInfo(header);
+        //searchProducts.getHeaderInfo(header);
+        softAs.assertTrue(searchProducts.getHeaderInfo(header),"Header TExt does not match");
+
     }
 
     @Then("Enter product name {string} in search input and click search button")
@@ -31,7 +35,10 @@ public class searchProducts {
     @Then("Verify {string} is visible")
     public void verify_is_visible(String item) {
         // Write code here that turns the phrase above into concrete actions
-        searchProducts.filterResult(item);
+        //searchProducts.filterResult(item);
+        //softAs.assertEquals(searchProducts.filterResult(item),item,"Not a Match");
+        softAs.assertEquals(searchProducts.filterResult(item),item+1,"Not a Match");
+        softAs.assertAll();
     }
 
     @Then("Add products to cart")
@@ -44,7 +51,9 @@ public class searchProducts {
     public void verify_that_cart_page_is_displayed() throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
         searchProducts.clickCartMenu();
-        searchProducts.verifyShopping();
+        //searchProducts.verifyShopping();
+        softAs.assertEquals(searchProducts.verifyShopping(),"Shopping Cart","Not a Match");
+        softAs.assertAll();
 
     }
     @Then("Click {string} button corresponding to particular product")

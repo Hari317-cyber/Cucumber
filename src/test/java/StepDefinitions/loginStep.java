@@ -14,6 +14,7 @@ public class loginStep {
         // Write code here that turns the phrase above into concrete actions
         https://www.automationexercise.com/login
         System.out.println("the user is in login page");
+        this.logout();
         login.url();
 
     }
@@ -21,6 +22,7 @@ public class loginStep {
     public void the_user_enters_valid_credentials() {
         // Write code here that turns the phrase above into concrete actions
         System.out.println("the user enters valid credentials");
+
         login.enterCreds("ajith@email.com","password-1");
     }
     @When("clicks submit button")
@@ -71,6 +73,7 @@ public class loginStep {
     public void logout() {
         // Write code here that turns the phrase above into concrete actions
         System.out.println("logout");
+
         login.logout();
     }
 
