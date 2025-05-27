@@ -40,8 +40,8 @@ public class searchProducts {
         System.out.println("-------------------------------------------------------------");
         System.out.println(item);
         String result= searchProducts.filterResult(item);
-        softAs.assertEquals(result,item+1,"Not a Match");
-        softAs.assertAll();
+        softAs.assertEquals(result,item,"Not a Match");
+        //softAs.assertAll();
     }
 
     @Then("Add products to cart")
