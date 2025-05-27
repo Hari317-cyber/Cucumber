@@ -10,7 +10,7 @@ import org.testng.annotations.Listeners;
         features = "src/test/resources/features",
         tags="@Login1 or @Login2",
         glue = {"StepDefinitions"},
-        plugin={"pretty","html:TestReports\\TestReports.html"}
+        plugin={"pretty","html:TestReports\\TestReports.html","rerun:target/failed.txt"}
 )
 
 //@Listeners({ExtentITestListenerClassAdapter.class})

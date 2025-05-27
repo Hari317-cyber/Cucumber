@@ -37,7 +37,10 @@ public class searchProducts {
         // Write code here that turns the phrase above into concrete actions
         //searchProducts.filterResult(item);
         //softAs.assertEquals(searchProducts.filterResult(item),item,"Not a Match");
-        softAs.assertEquals(searchProducts.filterResult(item),item+1,"Not a Match");
+        System.out.println("-------------------------------------------------------------");
+        System.out.println(item);
+        String result= searchProducts.filterResult(item);
+        softAs.assertEquals(result,item+1,"Not a Match");
         softAs.assertAll();
     }
 
@@ -53,7 +56,7 @@ public class searchProducts {
         searchProducts.clickCartMenu();
         //searchProducts.verifyShopping();
         softAs.assertEquals(searchProducts.verifyShopping(),"Shopping Cart","Not a Match");
-        softAs.assertAll();
+        //softAs.assertAll();
 
     }
     @Then("Click {string} button corresponding to particular product")

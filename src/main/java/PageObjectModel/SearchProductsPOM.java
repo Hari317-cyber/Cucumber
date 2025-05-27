@@ -82,6 +82,7 @@ public class SearchProductsPOM {
 
     public String filterResult(String item){
         //this.softAs.assertEquals(filterItem.getText(),item,"Item not filtered");
+        System.out.println(filterItem.getText());
         return filterItem.getText();
     }
 
