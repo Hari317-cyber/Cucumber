@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
         tags="@Search2 or @Search1",
         glue = {"StepDefinitions"},
 //        plugin={"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
-        plugin={"pretty","json:TestReports\\TestReports.json","rerun:target/failed.txt"}
+        plugin={"pretty","html:TestReports\\TestReports.html","rerun:target/failed.txt"}
 //                ,
 //                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 
