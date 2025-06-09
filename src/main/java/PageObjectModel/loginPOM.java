@@ -75,7 +75,15 @@ public class loginPOM {
         }
 
         public void url(){
-            driver.get("https://www.automationexercise.com/login");
+
+            String urllinkl= "";
+            if(System.getProperty("URL") == null){
+                urllinkl= "https://www.automationexercise.com/login";
+            }
+            else{
+                urllinkl= System.getProperty("URL");
+            }
+            driver.get(urllinkl);
             driver.manage().window().maximize();
         }
 
